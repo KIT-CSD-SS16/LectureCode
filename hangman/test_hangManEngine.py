@@ -16,5 +16,17 @@ class HangManEngineTest(unittest.TestCase):
 
     def test_readAndReturnCharacter(self):
         hangManEngine = HangManEngine.HangManEngine('NOTTESTING')
-        self.assertEqual(hangManEngine.readInput(),
+        self.assertEqual(hangManEngine.readInput('A'),
         'You chose an "A" ')
+        self.assertEqual(hangManEngine.readInput('B'),
+        'You chose an "B" ')
+
+#if there was a guess of a character, the Message should be changed to the input word
+#with all chars, that have not already been guessed replaced with X.
+
+    def test_intermediateString(self):
+      hangManEngine = HangManEngine.HangManEngine('GLUCKSRAD')
+      hangManEngine.readInput('A')
+      self.assertEqual(hangManEngine.getMessage(),
+      'XXXXXXXXX')
+

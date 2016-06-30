@@ -2,16 +2,20 @@ __author__ = 'Thomas Hauth, Martin Heck'
 
 class HangManEngine:
   def __init__(self, secretWord):
-    pass
+    self.guessedChars = []
 
   def getMessage(self):
+    if not self.guessedChars:
+      return\
+      'This is a game of hangman. For an explanation, please search the web.'
     return\
-    'This is a game of hangman. For an explanation, please search the web.'
+    'XXXXXXXXX'
 
   def readInput(self, testChar = None):
     if testChar:
       guessChar = testChar
     else:
-      guessedChar = input('Choose a character: ')
+      guessChar = input('Choose a character: ')
+    self.guessedChars.append(guessChar)
     return\
-    '''You chose an "''' + guessedChar + '''" '''
+    '''You chose an "''' + guessChar + '''" '''
