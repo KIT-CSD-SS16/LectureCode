@@ -8,6 +8,10 @@ class HangManEngine:
     return\
     'This is a game of hangman. For an explanation, please search the web.'
 
-  def readInput(self):
+  def readInput(self, testChar = None):
+    if testChar:
+      guessChar = testChar
+    else:
+      guessedChar = input('Choose a character: ')
     return\
-    '''You chose an "A" '''
+    '''You chose an "''' + guessedChar + '''" '''
