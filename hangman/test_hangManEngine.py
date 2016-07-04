@@ -28,10 +28,25 @@ class HangManEngineTest(unittest.TestCase):
       hangManEngine = HangManEngine.HangManEngine('GLUCKSRAD')
       hangManEngine.readInput('Z')
       self.assertEqual(hangManEngine.getMessage(),
-      'XXXXXXXXX')
+      '---------')
 
       hangManEngine.readInput('R')
       self.assertEqual(hangManEngine.getMessage(),
-      'XXXXXXRXX')
+      '------R--')
+
+      hangManEngine.readInput('G')
+      hangManEngine.readInput('L')
+      hangManEngine.readInput('U')
+      hangManEngine.readInput('C')
+      hangManEngine.readInput('K')
+      hangManEngine.readInput('S')
+      hangManEngine.readInput('A')
+      hangManEngine.readInput('D')
+      self.assertEqual(hangManEngine.getMessage(),
+      'GLUCKSRAD \n You won the game.')
+
+      hangManEngine.readInput('N')
+      self.assertEqual(hangManEngine.getMessage(),
+      '')
 
 

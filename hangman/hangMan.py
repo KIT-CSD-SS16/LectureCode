@@ -6,8 +6,8 @@ import HangManEngine
 
 def main():
   # my code here
-  hangManEngine = HangManEngine.HangManEngine('GLUCKSRAD')
-  while hangManEngine.getMessage():
+  hangManEngine = HangManEngine.HangManEngine('RAD')
+  while not hangManEngine.isFinished():
       print (hangManEngine.getMessage())
       print (hangManEngine.readInput())
 print ('Bye')
