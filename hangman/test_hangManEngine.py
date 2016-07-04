@@ -49,4 +49,11 @@ class HangManEngineTest(unittest.TestCase):
       self.assertEqual(hangManEngine.getMessage(),
       '')
 
+    def test_end(self):
+      hangManEngine = HangManEngine.HangManEngine('A')
+      self.assertFalse(hangManEngine.isFinished())
+      hangManEngine.readInput('A')
+      hangManEngine.getMessage()
+      self.assertTrue(hangManEngine.isFinished())
+
 
