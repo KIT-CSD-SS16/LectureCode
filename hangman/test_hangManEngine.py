@@ -26,7 +26,12 @@ class HangManEngineTest(unittest.TestCase):
 
     def test_intermediateString(self):
       hangManEngine = HangManEngine.HangManEngine('GLUCKSRAD')
-      hangManEngine.readInput('A')
+      hangManEngine.readInput('Z')
       self.assertEqual(hangManEngine.getMessage(),
       'XXXXXXXXX')
+
+      hangManEngine.readInput('R')
+      self.assertEqual(hangManEngine.getMessage(),
+      'XXXXXXRXX')
+
 
