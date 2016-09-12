@@ -10,7 +10,6 @@ def main():
   while not hangManEngine.isFinished():
       print (hangManEngine.getMessage())
       print (hangManEngine.readInput())
-print ('Bye')
 
 if __name__ == "__main__":
   main()

@@ -19,6 +19,8 @@ class HangManEngine:
 
   def getMessage(self):
     if self.isFinished() == True:
+        if not self.gameIsWon:
+          return 'You lost the game!'
         return ''
     if not self.guessedChars:
       return\
@@ -33,7 +35,7 @@ class HangManEngine:
     return output
 
   def readInput(self, testChar = None):
-    if self.isFinished() == True:
+    if self.gameIsWon == True:
       return "Game going to terminate itself."
     if testChar:
       guessChar = testChar
@@ -44,5 +46,7 @@ class HangManEngine:
       self.CountOfWrongGuesses +=1
 
     self.guessedChars.append(guessChar)
+    if (self.CountOfWrongGuesses > 6 ):
+      return 'You lost the game!'
     return\
     '''You chose an "''' + guessChar + '''" '''

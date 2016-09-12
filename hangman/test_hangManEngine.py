@@ -68,6 +68,8 @@ class HangManEngineTest(unittest.TestCase):
       hangManEngine.readInput('U')
       hangManEngine.readInput('U')
       self.assertTrue(hangManEngine.isFinished())
+      self.assertEqual(hangManEngine.readInput('U'),
+      "You lost the game!")
 
 
 
