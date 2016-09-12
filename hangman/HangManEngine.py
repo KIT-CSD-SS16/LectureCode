@@ -5,9 +5,10 @@ class HangManEngine:
     self.guessedChars = []
     self.secretWord = secretWord
     self.gameIsWon = False
+    self.CountOfWrongGuesses = 0
 
   def isFinished(self):
-    return self.gameIsWon
+    return self.gameIsWon or (self.CountOfWrongGuesses > 6)
 
   def sendXorChar(self, letter):
     for char in self.guessedChars:
@@ -17,7 +18,7 @@ class HangManEngine:
     print ("Bug")
 
   def getMessage(self):
-    if self.gameIsWon == True:
+    if self.isFinished() == True:
         return ''
     if not self.guessedChars:
       return\
@@ -32,12 +33,16 @@ class HangManEngine:
     return output
 
   def readInput(self, testChar = None):
-    if self.gameIsWon == True:
+    if self.isFinished() == True:
       return "Game going to terminate itself."
     if testChar:
       guessChar = testChar
     else:
       guessChar = input('Choose a character: ')
+    # increase counter, if testChar not in secretWord
+    if  str(self.secretWord).find(guessChar)== -1:
+      self.CountOfWrongGuesses +=1
+
     self.guessedChars.append(guessChar)
     return\
     '''You chose an "''' + guessChar + '''" '''

@@ -56,4 +56,18 @@ class HangManEngineTest(unittest.TestCase):
       hangManEngine.getMessage()
       self.assertTrue(hangManEngine.isFinished())
 
+# if the number of wrong guesses reaches 7, the game ends as well.
+# for this test, it is extremely important to be careful in the implementation
+# not to handle only the case where the readInput is called with an argument!
+      hangManEngine = HangManEngine.HangManEngine('RAD')
+      hangManEngine.readInput('U')
+      hangManEngine.readInput('U')
+      hangManEngine.readInput('U')
+      hangManEngine.readInput('U')
+      hangManEngine.readInput('U')
+      hangManEngine.readInput('U')
+      hangManEngine.readInput('U')
+      self.assertTrue(hangManEngine.isFinished())
+
+
 
